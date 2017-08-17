@@ -1,0 +1,130 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!doctype html>
+<html>
+<title>Add A New ENTRY</title>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Demonstrations From Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- //Custom Theme files -->
+<link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- bootstrap-css -->
+<!--// bootstrap-css -->
+    <link rel="stylesheet" href="css/bootsrap.min.css.css" type="text/css" media="all" />
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--// css -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+  $(function() {
+    $('.date').mask('99/99/9999');
+    $('.time').mask('99:99:99');
+    $('.date_time').mask('99/99/9999 99:99:99');
+    $('.cep').mask('99999-999');
+    $('.phone').mask('9999-9999');
+    $('.phone_with_ddd').mask('(99) 9999-9999');
+    $('.phone_us').mask('(999) 999-9999');
+    $('.mixed').mask('AAA 000-S0S');
+
+    $('.cep_with_callback').mask('00000-000', {onComplete: function(cep) {
+        console.log('Mask is done!:', cep);
+      },
+       onKeyPress: function(cep, event, currentField, options){
+        console.log('An key was pressed!:', cep, ' event: ', event, 'currentField: ', currentField.attr('class'), ' options: ', options);
+      }
+    });
+
+    $('.crazy_cep').mask('00000-000', {onKeyPress: function(cep){
+      var masks = ['00000-000', '0-00-00-00'];
+        mask = (cep.length>7) ? masks[1] : masks[0];
+      $('.crazy_cep').mask(mask, this);
+    }});
+
+    $('.cpf').mask('999.999.999-99', {reverse: true});
+    $('.money').mask('000.000.000.000.000,00', {reverse: true});
+
+    var SaoPauloCelphoneMask = function(phone, e, currentField, options){
+      return phone.match(/^(\(?11\)? ?9(5[0-9]|6[0-9]|7[01234569]|8[0-9]|9[0-9])[0-9]{1})/g) ? '(00) 00000-0000' : '(00) 0000-0000';
+    };
+
+    $(".sp_celphones").mask(SaoPauloCelphoneMask, { onKeyPress: function(phone, e, currentField, options){
+      $(currentField).mask(SaoPauloCelphoneMask(phone), options);
+    }});
+
+
+    $('pre').each(function(i, e) {hljs.highlightBlock(e)});
+
+  });
+  </script>
+</head>
+<body>
+<div class="agileits-wrap">
+	<h1>Enter NEW student's Details</h1>
+	<div class="content">
+		<form action="newentry.php" method="POST">
+			<div id="examples">
+				<div class="w3l-left-grid">
+					<label>Name</label>
+					<input type="text" name="Name" required=""/>
+					<label>Roll No</label>
+					<input type="text" name="Roll_No" required=""/>
+                    <label>Password</label>
+					<input type="password" name="Password" required=""/>
+					<label>Confirm Password</label>
+					<input type="password" name="CPassword" required=""/>
+				<!--	<label>Date &amp; Hour</label>
+					<input type="text" class="date_time" required=""/>
+					<label>Zip-Code</label>
+					<input type="text" class="cep" required=""/>
+					<label>Zip-Code With Callbacks</label>
+					<input type="text" class="cep_with_callback" required=""/>
+					<label>Crazy Zip-Code</label>
+					<input type="text" class="crazy_cep" required=""/>
+					<label>Money</label>
+					<input type="text" class="money" required=""/>-->
+				</div>
+				<div class="w3l-left-grid">
+					<label>Internal Test 1</label>
+					<input type="text" name="IT1" required=""/>
+					<label>Internal Test 2</label>
+					<input type="text" name="IT2" required=""/>
+					<label>Internal Assessment</label>
+					<input type="text" name="IA" required=""/>
+					<label>Semester Marks</label>
+					<input type="text" name="SemM" required=""/>
+					<label>Semester Grace Marks</label>
+					<input type="text" name="SemGM" required=""/>
+					<label>Practical Marks</label>
+					<input type="text" name="PractM" required=""/>
+					<label>Practical Grace Marks</label>
+					<input type="text" name="PractGM"  required="" />
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<div class="w3ls-submit">
+				<input type="submit" value="Submit">
+			</div>
+			
+		</form>
+		
+		<a href="../AllData.php" class="btn btn-info" role="button">GO BACK</a>
+		
+	</div>
+	<!--<div class="wthree-footer">
+		<p>© 2017 Demonstrations Form Widget . All Rights Reserved | Design by <a href="http://w3layouts.com" target="_blank">W3layouts</a></p>
+	</div>-->
+</div>
+<script type="text/javascript" src="js/jquery.mask.js"></script>
+</body>
+</html>
